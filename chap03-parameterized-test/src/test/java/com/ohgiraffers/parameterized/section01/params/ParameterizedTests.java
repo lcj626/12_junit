@@ -2,7 +2,6 @@ package com.ohgiraffers.parameterized.section01.params;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.*;
@@ -36,7 +35,7 @@ class ParameterizedTests {
     void testIsOdd(int number){// 하나씩 꺼내서 요소 대입
 
         //when
-        boolean result = NumberValidator.isOdd(number);
+        boolean result = NumberValidator.isOdd(number); // 숫자가 홀수가 맞는지
 
         //then
         Assertions.assertTrue(result);
@@ -110,7 +109,7 @@ class ParameterizedTests {
 
         int actual = DataValidator.getLastDayOf(month);
 
-        Assertions.assertEquals(verifyValue, actual); // 얘네를 제외한 결과가 31일이ㅑㄴ 라는 ㅡㄴ깜
+        Assertions.assertEquals(verifyValue, actual); // 얘네를 제외한 결과가 31일이냐를 판별
     }
 
     // 4. @CsvSource 를 이용한 Csv리터럴
@@ -166,7 +165,7 @@ class ParameterizedTests {
      *   메소드 소스의 메소드 이름과 테스트 메소드의 이름이 일치하면 메소드 소스의 이름을 생략할 수 있다.
      *   커스텀 어노테이션을 만들어서 이를 활용할 수 도 있다.
      * */
-//    @MethodSource("providerStringSource")
+    @MethodSource("providerStringSource")
     @MethodSourceStringSource
     void testToUpperCaseWithMethodSource(String input, String verifyValue) {
 
@@ -215,7 +214,7 @@ class ParameterizedTests {
         int verifyValue = 30;
 
         //when
-        int actual = DateValidator.getLastDayOf(month);
+        int actual = DataValidator.getLastDayOf(month);
 
         //then
         Assertions.assertEquals(verifyValue, actual);
