@@ -190,8 +190,10 @@ public class AssertJTests {
 
         //then
         Assertions.assertThat(members)
-                .extracting("name", String.class) // extraction - 적출하다 , name을 String 타입을 적출하다
-                .containsAll(expected); // Arrays.asList("홍길동", "유관순", "이순신", "신사임당", "임꺽정"); 제대로 포함되어 있으면 됨
+                .extracting("name", String.class)
+                // extraction - 적출하다 , name을 String 타입을 적출하다
+                .containsAll(expected);
+        // Arrays.asList("홍길동", "유관순", "이순신", "신사임당", "임꺽정"); 제대로 포함되어 있으면 됨
     }
 
     /* 목차. 9. 객체의 프로퍼티를 여러 개 튜플로 추출하기 */
